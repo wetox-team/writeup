@@ -20,9 +20,10 @@
     python3 script.py
 ``
 
+### EN:
+  * in process...
 
-<details>
-  <summary>ru</summary>
+### RU:
   * Первый уровень это страница на http://tasks.open.kksctf.ru:20005/c3e97dd6e97fb5125688c97f36720cbe.php
     `"c3e97dd6e97fb5125688c97f36720cbe" == md5("$")` На странице имеется форма, в ней есть скрытое поле hash, 
     которое является md5 от капчи с картинки. 
@@ -33,13 +34,6 @@
   * Пилим ссылку на следующий уровень: 
       `"tasks.open.kksctf.ru:20005/" + md5(current_url_pash + secret) + ".php"`. 
   * Повторяем пока не дойдем до конца. Не забываем записывать все секретные слова, среди них затаился флаг.
-</details>
-
-
-<details>
-  <summary>en</summary>
-  in process...
-</details>
 
 <details>
   <summary>Secrets</summary>
@@ -70,4 +64,5 @@
    ante felis, commodo nec aliquam id, posuere ut augue. 
 </details>
 <br>
+
 flag is `kks{d0_u_r34lly_l1k3_w3b_bl0ckCh4in_T3ch}`
