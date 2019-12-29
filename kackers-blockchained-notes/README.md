@@ -1,4 +1,4 @@
-# Kackers blockchained notes Predictor (Web) [919]
+# Kackers blockchained notes (Web) [919]
 
 > We found a strange service with secrets that use blockchain-like technology. 
 > Evil kackers use it to store their secrets, maybe u can find something interesting.
