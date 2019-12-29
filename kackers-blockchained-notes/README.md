@@ -21,7 +21,15 @@
 ``
 
 ### EN:
-  * in process...
+* Firstly you should go to this page: http://tasks.open.kksctf.ru:20005/c3e97dd6e97fb5125688c97f36720cbe.php
+`"c3e97dd6e97fb5125688c97f36720cbe" == md5("$")` There is a form with hidden input, which contains md5 hash code, 
+(it is the full hash from the picture). 
+* Generate hashes using all 4-char combinations of `0123456789abcdef`, parse hash from the page to get the value.
+* When the `captcha` is got, brute force the line `x`, such that `md5(x)[28:] == captcha`. 
+* Send `captcha` hash and the `x` line's value to the current address, get the page with the secret word `secret`. 
+* Craft a new link: 
+    `"tasks.open.kksctf.ru:20005/" + md5(current_url_pash + secret) + ".php"`. 
+* Repeat till the end. Save all the secret words, the flag is among them.
 
 ### RU:
   * Первый уровень это страница на http://tasks.open.kksctf.ru:20005/c3e97dd6e97fb5125688c97f36720cbe.php
