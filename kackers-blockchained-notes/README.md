@@ -1,4 +1,4 @@
-# kackers-blockchained-notes task
+# Kackers blockchained notes Predictor (Web) [919]
 
 > We found a strange service with secrets that use blockchain-like technology. 
 > Evil kackers use it to store their secrets, maybe u can find something interesting.
@@ -20,17 +20,26 @@
     python3 script.py
 ``
 
-* Первый уровень это страница на http://tasks.open.kksctf.ru:20005/c3e97dd6e97fb5125688c97f36720cbe.php
-`"c3e97dd6e97fb5125688c97f36720cbe" == md5("$")` На странице имеется форма, в ней есть скрытое поле hash, 
-которое является md5 от капчи с картинки. 
-* Спарсив этот хэш находим само значение капчи (заранее надо сгенерировать 
-хэши для всех четырехзначных комбинаций символов `0123456789abcdef`). 
-* Когда `captcha` найдена, ищем перебором такую строку `x`, что `md5(x)[28:] == captcha`. 
-* Отправляем хэш капчи и полученую строку `x` на текущий адрес, получаем страницу со следующим секретным словом `secret`. 
-* Пилим ссылку на следующий уровень: 
-    `"tasks.open.kksctf.ru:20005/" + md5(current_url_pash + secret) + ".php"`. 
-* Повторяем пока не дойдем до конца. Не забываем записывать все секретные слова, среди них затаился флаг.
 
+<details>
+  <summary>ru</summary>
+  * Первый уровень это страница на http://tasks.open.kksctf.ru:20005/c3e97dd6e97fb5125688c97f36720cbe.php
+    `"c3e97dd6e97fb5125688c97f36720cbe" == md5("$")` На странице имеется форма, в ней есть скрытое поле hash, 
+    которое является md5 от капчи с картинки. 
+  * Спарсив этот хэш находим само значение капчи (заранее надо сгенерировать 
+    хэши для всех четырехзначных комбинаций символов `0123456789abcdef`). 
+  * Когда `captcha` найдена, ищем перебором такую строку `x`, что `md5(x)[28:] == captcha`. 
+  * Отправляем хэш капчи и полученую строку `x` на текущий адрес, получаем страницу со следующим секретным словом `secret`. 
+  * Пилим ссылку на следующий уровень: 
+      `"tasks.open.kksctf.ru:20005/" + md5(current_url_pash + secret) + ".php"`. 
+  * Повторяем пока не дойдем до конца. Не забываем записывать все секретные слова, среди них затаился флаг.
+</details>
+
+
+<details>
+  <summary>en</summary>
+  in process...
+</details>
 
 <details>
   <summary>Secrets</summary>
@@ -60,3 +69,5 @@
    imperdiet. Aliquam ut interdum lacus, sed maximus dui. In nunc mi, sagittis ac velit ut, laoreet hendrerit felis. Nunc 
    ante felis, commodo nec aliquam id, posuere ut augue. 
 </details>
+<br>
+flag is `kks{d0_u_r34lly_l1k3_w3b_bl0ckCh4in_T3ch}`
