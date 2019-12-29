@@ -14,13 +14,13 @@
 
 ## Solution
 
-``bash
-    git clone github.com/wetox-team/kksctf && cd kackers-blockchained-notes
+```bash
+    git clone https://github.com/wetox-team/kksctf.git && cd kksctf/kackers-blockchained-notes
     pip install requests
     python3 script.py
-``
+```
 
-### EN:
+#### EN:
 * Firstly you should go to this page: http://tasks.open.kksctf.ru:20005/c3e97dd6e97fb5125688c97f36720cbe.php
 `"c3e97dd6e97fb5125688c97f36720cbe" == md5("$")` There is a form with hidden input, which contains md5 hash code, 
 (it is the full hash from the picture). 
@@ -28,10 +28,10 @@
 * When the `captcha` is got, brute force the line `x`, such that `md5(x)[28:] == captcha`. 
 * Send `captcha` hash and the `x` line's value to the current address, get the page with the secret word `secret`. 
 * Craft a new link: 
-    `"tasks.open.kksctf.ru:20005/" + md5(current_url_pash + secret) + ".php"`. 
+    `"tasks.open.kksctf.ru:20005/" + md5(current_url_hash + secret) + ".php"`. 
 * Repeat till the end. Save all the secret words, the flag is among them.
 
-### RU:
+#### RU:
   * Первый уровень это страница на http://tasks.open.kksctf.ru:20005/c3e97dd6e97fb5125688c97f36720cbe.php
     `"c3e97dd6e97fb5125688c97f36720cbe" == md5("$")` На странице имеется форма, в ней есть скрытое поле hash, 
     которое является md5 от капчи с картинки. 
@@ -40,7 +40,7 @@
   * Когда `captcha` найдена, ищем перебором такую строку `x`, что `md5(x)[28:] == captcha`. 
   * Отправляем хэш капчи и полученую строку `x` на текущий адрес, получаем страницу со следующим секретным словом `secret`. 
   * Пилим ссылку на следующий уровень: 
-      `"tasks.open.kksctf.ru:20005/" + md5(current_url_pash + secret) + ".php"`. 
+      `"tasks.open.kksctf.ru:20005/" + md5(current_url_hash + secret) + ".php"`. 
   * Повторяем пока не дойдем до конца. Не забываем записывать все секретные слова, среди них затаился флаг.
 
 <details>
