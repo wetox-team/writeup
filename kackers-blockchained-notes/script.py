@@ -66,7 +66,7 @@ def main():
 
 
 def generate_captcha_hashes():
-    alphabet = "0123456789" + string.ascii_lowercase
+    alphabet = "0123456789abcdef"
     hash_dict = {}
     for c1 in alphabet:
         for c2 in alphabet:
