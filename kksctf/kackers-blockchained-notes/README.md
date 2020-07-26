@@ -16,7 +16,7 @@
 
 ```bash
     git clone https://github.com/wetox-team/kksctf.git && cd kksctf/kackers-blockchained-notes
-    pip install requests
+    pip3 install requests
     python3 script.py
 ```
 
