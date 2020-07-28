@@ -4,7 +4,7 @@ Author: Alexander Menshchikov ([@n0str](https://t.me/n0str))
 
 The webdev department created another cool startup. Here you can convert any animated GIF to PNG images. 
 
-It's only left to figure out how to monetize it: [gif2png-cybrics2020.ctf.su](gif2png-cybrics2020.ctf.su)
+It's only left to figure out how to monetize it: https://gif2png-cybrics2020.ctf.su
 
 [src](./gif2png.tar.gz)
 
