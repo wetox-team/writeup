@@ -11,10 +11,10 @@
 
   2. try to connect to the remote machine using private key 
 	 
-    type ssh user@jh2i.com -p 50004 -i id_rsa and set that message:
+   type ssh user@jh2i.com -p 50004 -i id_rsa and set that message:
 	
 	
-	load pubkey "id_rsa": invalid format
+   load pubkey "id_rsa": invalid format
 > @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 > @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
 > @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -65,15 +65,15 @@
 > -----END OPENSSH PRIVATE KEY-----
 
   4. it's  openssh private key, but we need RSA private key , so let's translate it to RSA:
-	* puttygen id_rsa -O private-sshcom -o newkey
-  	* ssh-keygen -i -f newkey > newkey_in_right_format
+	 puttygen id_rsa -O private-sshcom -o newkey
+  	 ssh-keygen -i -f newkey > newkey_in_right_format
   5.  We got RSA private , let's run command ssh user@jh2i.com -p 50004 -i newkey_in_right_format and see that message:
  > Permissions 0644 for 'newkey_in_right_format2' are too open.
  > It is required that your private key files are NOT accessible by others.
  > This private key will be ignored.
  > Load key "newkey_in_right_format2": bad permissions
   6. let's change access right:
-	* chmod 400 newkey_in_right_format 
+	 chmod 400 newkey_in_right_format 
 
   7. run command ssh user@jh2i.com -p 50004 -i newkey_in_right_format again , connect to remote machine and see file flag.txt
   
