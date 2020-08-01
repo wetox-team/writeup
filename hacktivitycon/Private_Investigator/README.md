@@ -11,10 +11,10 @@
 
   2. try to connect to the remote machine using private key 
 	 
-    type ssh user@jh2i.com -p 50004 -i id_rsa and set that message:
+     type ssh user@jh2i.com -p 50004 -i id_rsa and set that message:
 	
 	
-	load pubkey "id_rsa": invalid format
+   load pubkey "id_rsa": invalid format
 > @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 > @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
 > @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
