@@ -1,20 +1,19 @@
-   ## Private Investigator  [Warmups]
-
+## Private Investigator  
+​
    We have hired you to help investigate this private key. Please use it to connect to the server like so:
-   
-   ssh -i id_rsa user@jh2i.com -p 50004
+#####    ssh -i id_rsa user@jh2i.com -p 50004
   ---
   
   Solution
-
+​
   1. Let's download given ssh private key
-
+​
   2. try to connect to the remote machine using private key 
-	 
-    type ssh user@jh2i.com -p 50004 -i id_rsa and set that message:
-	
-	
-	load pubkey "id_rsa": invalid format
+   
+   type `ssh user@jh2i.com -p 50004 -i id_rsa` and see that message:
+  
+  
+>  load pubkey "id_rsa": invalid format
 > @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 > @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
 > @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -23,9 +22,12 @@
 > This private key will be ignored.
 > Load key "id_rsa": bad permissions
 > user@jh2i.com's password: 
-
-  3. private key is invalid , let's see one:
-	> -----BEGIN OPENSSH PRIVATE KEY-----
+    
+    
+3. private key is invalid , let's see one:
+​
+​
+> -----BEGIN OPENSSH PRIVATE KEY-----
 > b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
 > NhAAAAAwEAAQAAAYEAsLiZbT/+tg8qtA3BensRcqBTP+cqchTkDR40FKpuD5e+TqzyLIYZ
 > II6MiU7icNw9Nb01vNQvrYxc4E/HxT8rAUBX5Yj0kqk+2V70jH2JK7dpPKJq8XLyZUUMSc
@@ -62,22 +64,31 @@
 > KaP9UzkTce5yj374uYI6RLVI8VOX65OPr8ifv+o3bU+ppKcawDHyzZPSj06Fe5/IvJ5Ovo
 > zLmagUlFCbu7F+FFkAiaJopjxrChTijg7a54ou57blFMO7KQL7hv6HN5XEvyyJAwCti0Wa
 > hokSgOriX8OuITAAAACmpvaG5AeHBzMTU=
-> -----END OPENSSH PRIVATE KEY-----
-
+>  -----END OPENSSH PRIVATE KEY-----
+​
   4. it's  openssh private key, but we need RSA private key , so let's translate it to RSA:
-	* puttygen id_rsa -O private-sshcom -o newkey
-  	* ssh-keygen -i -f newkey > newkey_in_right_format
-  5.  We got RSA private , let's run command ssh user@jh2i.com -p 50004 -i newkey_in_right_format and see that message:
+ 
+   `puttygen id_rsa -O private-sshcom -o newkey`
+   
+  
+`ssh-keygen -i -f newkey > newkey_in_right_format`
+​
+​
+  
+  5.  We got RSA private , let's run command:
+   `ssh user@jh2i.com -p 50004 -i newkey_in_right_format `  and see that message:
+ 
  > Permissions 0644 for 'newkey_in_right_format2' are too open.
  > It is required that your private key files are NOT accessible by others.
  > This private key will be ignored.
  > Load key "newkey_in_right_format2": bad permissions
+​
   6. let's change access right:
-	* chmod 400 newkey_in_right_format 
-
-  7. run command ssh user@jh2i.com -p 50004 -i newkey_in_right_format again , connect to remote machine and see file flag.txt
+   chmod 400 newkey_in_right_format 
+​
+  7. run command:
+    `ssh user@jh2i.com -p 50004 -i newkey_in_right_format    `  again , connect to remote machine and see file flag.txt
   
   8. cat flag.txt  
-
-flag{dont_ever_forget_that_newline} 
-
+​
+flag{dont_ever_forget_that_newline}
