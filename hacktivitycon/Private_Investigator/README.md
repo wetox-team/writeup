@@ -9,11 +9,9 @@
   1. Let's download given ssh private key
 ​
   2. try to connect to the remote machine using private key 
-   
-   type `ssh user@jh2i.com -p 50004 -i id_rsa` and see that message:
-  
-  
+
 >  load pubkey "id_rsa": invalid format
+
 > @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 > @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
 > @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
