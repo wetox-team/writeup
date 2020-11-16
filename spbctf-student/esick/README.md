@@ -1,4 +1,12 @@
-# **eSick** Web
+## eSick (Web Easy) · Task by Artem Pavlov (@yorxx) · Par time: ~20 min
+
+Have you ever heard about Black Hat Doctors? They have created a fake medical website! Can you h4ck them and get the flag?
+
+I've found [something interesting](./esick_bfac_43da75d1c7.txt), this may come in handy.
+
+---
+
+## solution
 
 Go to the web site of the task and after registration consider "Your patients" tab. Here we can add a sick leave. Let's do this and see that a new patient has been added. 
 
